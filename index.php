@@ -36,8 +36,8 @@ foreach ($products as $product) {
     }
 }
 
-var_dump($dogsProducts);
-var_dump($catsProducts);
+// var_dump($dogsProducts);
+// var_dump($catsProducts);
 
 ?>
 
@@ -50,12 +50,60 @@ var_dump($catsProducts);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css">
     <title>Document</title>
 </head>
 
 <body>
 
-    it works...
+    <div class="container">
+
+        <div class="wrapper">
+            <h1>Dogs products</h1>
+
+            <div class="grid">
+                <?php foreach ($dogsProducts as $prod) : ?>
+
+                    <div class="card">
+                        <img src="<?php echo $prod->getImg() ?>" class="card-img-top">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><?php echo $prod->getTitle(); ?></h5>
+                            <p class="card-text"><?php echo $prod->getPrice(); ?> €</p>
+                        </div>
+                    </div>
+
+
+                <?php endforeach ?>
+
+
+            </div>
+
+        </div>
+
+        <div class="wrapper">
+            <h1>Cats products</h1>
+
+            <div class="grid">
+                <?php foreach ($catsProducts as $prod) : ?>
+
+                    <div class="card">
+                        <img src="<?php echo $prod->getImg() ?>" class="card-img-top">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><?php echo $prod->getTitle(); ?></h5>
+                            <p class="card-text"><?php echo $prod->getPrice(); ?> €</p>
+                        </div>
+                    </div>
+
+
+                <?php endforeach ?>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 
 
