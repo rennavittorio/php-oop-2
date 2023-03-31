@@ -3,25 +3,41 @@
 
 require_once './Models/Product.php';
 require_once __DIR__ . '/Models/Food.php';
+require_once __DIR__ . '/Models/Doghouse.php';
+require_once __DIR__ . '/Models/Toy.php';
 require_once __DIR__ . '/Db/db.php';
 
 $dogsProducts = [];
 $catsProducts = [];
 
-// foreach ($products as $product) {
+foreach ($products as $product) {
 
-//     if ($product['category'] === 'food') {
-//         $item = new Food('f', $product['img'], $product['title'], $product['price'], $product['weigth'], $product['expirationDate']);
-//         if ($product['animals'] === 'dog') {
-//             $dogsProducts[] = $item;
-//         } elseif ($product['animals'] === 'cat') {
-//             $catsProducts[] = $item;
-//         }
-//     }
-// }
+    if ($product['category'] === 'food') {
+        $item = new Food('f', $product['img'], $product['title'], $product['price'], $product['weigth'], $product['expirationDate']);
+        if ($product['animals'] === 'dog') {
+            $dogsProducts[] = $item;
+        } elseif ($product['animals'] === 'cat') {
+            $catsProducts[] = $item;
+        }
+    } elseif ($product['category'] === 'doghouse') {
+        $item = new Doghouse('f', $product['img'], $product['title'], $product['price'], $product['prodLength'], $product['prodHeight']);
+        if ($product['animals'] === 'dog') {
+            $dogsProducts[] = $item;
+        } elseif ($product['animals'] === 'cat') {
+            $catsProducts[] = $item;
+        }
+    } elseif ($product['category'] === 'toy') {
+        $item = new Toy('f', $product['img'], $product['title'], $product['price'], $product['isForPuppies'], $product['isPlasticFree']);
+        if ($product['animals'] === 'dog') {
+            $dogsProducts[] = $item;
+        } elseif ($product['animals'] === 'cat') {
+            $catsProducts[] = $item;
+        }
+    }
+}
 
-// var_dump($dogsProducts);
-// var_dump($catsProducts);
+var_dump($dogsProducts);
+var_dump($catsProducts);
 
 ?>
 
