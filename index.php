@@ -3,11 +3,25 @@
 
 require_once './Models/Product.php';
 require_once __DIR__ . '/Models/Food.php';
+require_once __DIR__ . '/Db/db.php';
 
+$dogsProducts = [];
+$catsProducts = [];
 
-$item1 = new Food('food', 'some img', 'some title', 500, 800, '2023-01-01');
-var_dump($item1);
-var_dump($item1->getId());
+// foreach ($products as $product) {
+
+//     if ($product['category'] === 'food') {
+//         $item = new Food('f', $product['img'], $product['title'], $product['price'], $product['weigth'], $product['expirationDate']);
+//         if ($product['animals'] === 'dog') {
+//             $dogsProducts[] = $item;
+//         } elseif ($product['animals'] === 'cat') {
+//             $catsProducts[] = $item;
+//         }
+//     }
+// }
+
+// var_dump($dogsProducts);
+// var_dump($catsProducts);
 
 ?>
 
