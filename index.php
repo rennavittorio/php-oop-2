@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <?php
 
+require_once './Models/Prodotto.php';
+
+
+$item1 = new Product('cane', '/img/img.png', 'some text title', 3000);
+var_dump($item1);
+var_dump($item1->getId());
 
 ?>
 
@@ -18,7 +24,7 @@
 
 <body>
 
-
+    it works...
 
 
 
