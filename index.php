@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <?php
 
-require_once './Models/Prodotto.php';
+require_once './Models/Product.php';
+require_once __DIR__ . '/Models/Food.php';
 
 
-$item1 = new Product('cane', '/img/img.png', 'some text title', 3000);
+$item1 = new Food('food', 'some img', 'some title', 500, 800, '2023-01-01');
 var_dump($item1);
 var_dump($item1->getId());
 
