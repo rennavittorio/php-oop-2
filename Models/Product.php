@@ -6,6 +6,8 @@ class Product
     protected $img;
     protected $title;
     protected $price;
+    protected $animals;
+    protected $type;
 
 
     //constructor
@@ -40,6 +42,16 @@ class Product
         $this->price = $newValue;
     }
 
+    public function setanimals($newValue)
+    {
+        $this->animals = $newValue;
+    }
+
+    public function setType($newValue)
+    {
+        $this->type = $newValue;
+    }
+
     //getters
     public function getId()
     {
@@ -59,5 +71,15 @@ class Product
     public function getPrice()
     {
         return $this->price;
+    }
+
+    public function getanimals()
+    {
+        return $this->animals;
+    }
+
+    public function getType()
+    {
+        return $this->type;
     }
 }
