@@ -18,7 +18,11 @@ foreach ($products as $product) {
         $item->setType($product['category']);
         $item->setIsAvialable($product['isDiscounted']);
         $item->setPercDiscount($product['percDiscount']);
-        $item->setDiscountedPrice($product['price'], $product['percDiscount'], $product['isDiscounted']);
+        try {
+            $item->setDiscountedPrice($product['price'], $product['percDiscount'], $product['isDiscounted']);
+        } catch (Exception $e) {
+            echo 'discount error on element: ' . $item->getTitle();
+        }
         if ($product['animals'] === 'dog') {
             $dogsProducts[] = $item;
         } elseif ($product['animals'] === 'cat') {
@@ -30,7 +34,11 @@ foreach ($products as $product) {
         $item->setType($product['category']);
         $item->setIsAvialable($product['isDiscounted']);
         $item->setPercDiscount($product['percDiscount']);
-        $item->setDiscountedPrice($product['price'], $product['percDiscount'], $product['isDiscounted']);
+        try {
+            $item->setDiscountedPrice($product['price'], $product['percDiscount'], $product['isDiscounted']);
+        } catch (Exception $e) {
+            echo 'discount error on element: ' . $item->getTitle();
+        }
         if ($product['animals'] === 'dog') {
             $dogsProducts[] = $item;
         } elseif ($product['animals'] === 'cat') {
@@ -42,7 +50,11 @@ foreach ($products as $product) {
         $item->setType($product['category']);
         $item->setIsAvialable($product['isDiscounted']);
         $item->setPercDiscount($product['percDiscount']);
-        $item->setDiscountedPrice($product['price'], $product['percDiscount'], $product['isDiscounted']);
+        try {
+            $item->setDiscountedPrice($product['price'], $product['percDiscount'], $product['isDiscounted']);
+        } catch (Exception $e) {
+            echo 'discount error on element: ' . $item->getTitle();
+        }
         if ($product['animals'] === 'dog') {
             $dogsProducts[] = $item;
         } elseif ($product['animals'] === 'cat') {

@@ -25,8 +25,12 @@ trait Discount
     public function setDiscountedPrice($_price, $_percDiscount, $_isAvailable)
     {
         if ($_isAvailable === true) {
-            $totalDiscount = ($_price * $_percDiscount) / 100;
-            $this->discountedPrice = $_price - $totalDiscount;
+            if ($_percDiscount === null) {
+                throw new Exception('discount perc not found');
+            } else {
+                $totalDiscount = ($_price * $_percDiscount) / 100;
+                $this->discountedPrice = $_price - $totalDiscount;
+            }
         }
     }
 

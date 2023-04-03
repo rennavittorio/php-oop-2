@@ -21,7 +21,7 @@ $products = [
         'weigth' => 500,
         'expirationDate' => '2079-01-01',
         'isDiscounted' => true,
-        'percDiscount' => 30
+        'percDiscount' => null
     ],
     $uglyPlace = [
         'img' => './Img/kennel.jpg',
