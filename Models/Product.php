@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/Discount.php';
+require_once __DIR__ . '/../Traits/Discount.php';
 
 class Product
 {
