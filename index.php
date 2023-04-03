@@ -16,6 +16,9 @@ foreach ($products as $product) {
         $item = new Food('f', $product['img'], $product['title'], $product['price'], $product['weigth'], $product['expirationDate']);
         $item->setAnimals($product['animals']);
         $item->setType($product['category']);
+        $item->setIsAvialable($product['isDiscounted']);
+        $item->setPercDiscount($product['percDiscount']);
+        $item->setDiscountedPrice($product['price'], $product['percDiscount'], $product['isDiscounted']);
         if ($product['animals'] === 'dog') {
             $dogsProducts[] = $item;
         } elseif ($product['animals'] === 'cat') {
@@ -25,6 +28,9 @@ foreach ($products as $product) {
         $item = new Doghouse('f', $product['img'], $product['title'], $product['price'], $product['prodLength'], $product['prodHeight']);
         $item->setAnimals($product['animals']);
         $item->setType($product['category']);
+        $item->setIsAvialable($product['isDiscounted']);
+        $item->setPercDiscount($product['percDiscount']);
+        $item->setDiscountedPrice($product['price'], $product['percDiscount'], $product['isDiscounted']);
         if ($product['animals'] === 'dog') {
             $dogsProducts[] = $item;
         } elseif ($product['animals'] === 'cat') {
@@ -34,6 +40,9 @@ foreach ($products as $product) {
         $item = new Toy('f', $product['img'], $product['title'], $product['price'], $product['isForPuppies'], $product['isPlasticFree']);
         $item->setAnimals($product['animals']);
         $item->setType($product['category']);
+        $item->setIsAvialable($product['isDiscounted']);
+        $item->setPercDiscount($product['percDiscount']);
+        $item->setDiscountedPrice($product['price'], $product['percDiscount'], $product['isDiscounted']);
         if ($product['animals'] === 'dog') {
             $dogsProducts[] = $item;
         } elseif ($product['animals'] === 'cat') {
@@ -42,8 +51,8 @@ foreach ($products as $product) {
     }
 }
 
-var_dump($dogsProducts);
-var_dump($catsProducts);
+// var_dump($dogsProducts);
+// var_dump($catsProducts);
 
 ?>
 
@@ -74,7 +83,8 @@ var_dump($catsProducts);
                         <img src="<?php echo $prod->getImg() ?>" class="card-img-top">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Name: <?php echo $prod->getTitle(); ?></h5>
-                            <p class="card-text">Price: <?php echo $prod->getPrice(); ?> €</p>
+                            <p class="card-text text-decoration-line-through">Price: <?php echo $prod->getPrice(); ?> €</p>
+                            <p class="card-text">New Price: <?php echo $prod->getDiscountedPrice(); ?> €</p>
                             <p class="card-text">For your: <?php echo $prod->getAnimals(); ?></p>
                             <p class="card-text">Type: <?php echo $prod->getType(); ?></p>
                         </div>
@@ -98,7 +108,8 @@ var_dump($catsProducts);
                         <img src="<?php echo $prod->getImg() ?>" class="card-img-top">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Name: <?php echo $prod->getTitle(); ?></h5>
-                            <p class="card-text">Price: <?php echo $prod->getPrice(); ?> €</p>
+                            <p class="card-text text-decoration-line-through">Price: <?php echo $prod->getPrice(); ?> €</p>
+                            <p class="card-text">New Price: <?php echo $prod->getDiscountedPrice(); ?> €</p>
                             <p class="card-text">For your: <?php echo $prod->getAnimals(); ?></p>
                             <p class="card-text">Type: <?php echo $prod->getType(); ?></p>
                         </div>

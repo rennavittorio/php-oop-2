@@ -8,7 +8,9 @@ $products = [
         'category' => 'food',
         'animals' => 'dog',
         'weigth' => 500,
-        'expirationDate' => '2099-01-01'
+        'expirationDate' => '2099-01-01',
+        'isDiscounted' => false,
+        'percDiscount' => null
     ],
     $cucumber = [
         'img' => './Img/cucumber.jpg',
@@ -17,7 +19,9 @@ $products = [
         'category' => 'food',
         'animals' => 'cat',
         'weigth' => 500,
-        'expirationDate' => '2079-01-01'
+        'expirationDate' => '2079-01-01',
+        'isDiscounted' => true,
+        'percDiscount' => 30
     ],
     $uglyPlace = [
         'img' => './Img/kennel.jpg',
@@ -26,7 +30,9 @@ $products = [
         'category' => 'doghouse',
         'animals' => 'dog',
         'prodLength' => 23,
-        'prodHeight' => 32
+        'prodHeight' => 32,
+        'isDiscounted' => true,
+        'percDiscount' => 50
     ],
     $beautifulCastel = [
         'img' => './Img/castel.jpg',
@@ -35,7 +41,9 @@ $products = [
         'category' => 'doghouse',
         'animals' => 'cat',
         'prodLength' => 78,
-        'prodHeight' => 98
+        'prodHeight' => 98,
+        'isDiscounted' => false,
+        'percDiscount' => null
     ],
     $somethingToChew = [
         'img' => './Img/dogtoy.jpg',
@@ -44,7 +52,9 @@ $products = [
         'category' => 'toy',
         'animals' => 'dog',
         'isForPuppies' => false,
-        'isPlasticFree' => true
+        'isPlasticFree' => true,
+        'isDiscounted' => true,
+        'percDiscount' => 75
     ],
     $somethingToDestroy = [
         'img' => './Img/cattoy.jpg',
@@ -53,6 +63,8 @@ $products = [
         'category' => 'toy',
         'animals' => 'cat',
         'isForPuppies' => true,
-        'isPlasticFree' => false
+        'isPlasticFree' => false,
+        'isDiscounted' => false,
+        'percDiscount' => null
     ]
 ];

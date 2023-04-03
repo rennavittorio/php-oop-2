@@ -1,11 +1,17 @@
 <?php
 
+require_once __DIR__ . '/Discount.php';
+
 class Product
 {
+
+    use Discount;
+
     private $id;
     protected $img;
     protected $title;
     protected $price;
+    protected $discountedPrice;
     protected $animals;
     protected $type;
 
